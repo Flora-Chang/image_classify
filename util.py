@@ -22,7 +22,5 @@ flags.DEFINE_string("train_dir", "../data/ai_challenger_scene_train_20170904/lit
                     "the training data directory")
 flags.DEFINE_string("val_dir", "../data/ai_challenger_scene_validation_20170908/little_val_images/",
                     "the validation data directory")
-# flags.DEFINE_string("batch_size", 64, "batch size")
-# flags.DEFINE_string("batch_size", 64, "batch size")
 
 FLAGS = flags.FLAGS

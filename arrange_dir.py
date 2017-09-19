@@ -20,11 +20,11 @@ with open("./scene_validation_annotations_20170908.json") as json_file:
 	for line in json_file:
 		items = json.loads(line)
 
-	for item in items:
-		name = item['image_id']
-		label = int(item["label_id"])
-		shutil.copy(os.path.join(image_root, name), os.path.join(new_image_root, str(label) + "_" + "_".join(names[label].split("/")[0].split())) + '/')
-		count += 1
-		if count >= 1000:
-			break
+		for item in items:
+			name = item['image_id']
+			label = int(item["label_id"])
+			shutil.copy(os.path.join(image_root, name), os.path.join(new_image_root, str(label) + "_" + "_".join(names[label].split("/")[0].split())) + '/')
+			count += 1
+			if count >= 1000:
+				break
 
