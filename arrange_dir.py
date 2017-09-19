@@ -5,18 +5,18 @@ import sys
 import json
 import shutil
 
-image_root ="./scene_validation_images_20170908/"
-new_image_root = './little_val_images/'
+image_root ="../data/scene_validation_images_20170908/"
+new_image_root = 'little_val_images/'
 
-data = pd.read_csv("./scene_classes.csv")
+data = pd.read_csv(os.path.join(image_root, "scene_classes.csv"))
 names = data['chinese']
 
 if not os.path.exists(new_image_root):
 	os.mkdir(new_image_root)
 for i, name in enumerate(names):
-	os.mkdir(os.path.join(new_image_root, str(i) + "_" + "_".join(name.split("/")[0].split())))
+	os.mkdir(os.path.join(image_root, new_image_root, str(i) + "_" + "_".join(name.split("/")[0].split())))
 count = 0
-with open("./scene_validation_annotations_20170908.json") as json_file:
+with open(os.path.join(image_root, "scene_validation_annotations_20170908.json")) as json_file:
 	for line in json_file:
 		items = json.loads(line)
 
